@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row alig n-items-start">
+              <div class="col-8">
+                <h5 class="card-title mb-9 fw-semibold">Temperature</h5>
+                <h4 id="temperature" class="mb-3"> °C</h4>
+              </div>
+              <div class="col-4">
+                <div class="d-flex justify-content-end">
+                  <div class="text-white bg-red rounded-circle p-6 d-flex align-items-center justify-content-center">
+                    <i class="ti ti-temperature fs-6"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="temperature-chart"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row alig n-items-start">
+            <div class="col-8">
+              <h5 class="card-title mb-9 fw-semibold">Humidity</h5>
+              <h4 id="humidity" class="mb-3"> %</h4>
+            </div>
+            <div class="col-4">
+              <div class="d-flex justify-content-end">
+                <div class="text-white bg-blue rounded-circle p-6 d-flex align-items-center justify-content-center">
+                  <i class="ti ti-droplet fs-6"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="humidity-chart"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row alig n-items-start">
+            <div class="col-8">
+              <h5 class="card-title mb-9 fw-semibold">Light</h5>
+              <h4 id="light" class="mb-3">0 (Dark)</h4>
+            </div>
+            <div class="col-4">
+              <div class="d-flex justify-content-end">
+                <div class="text-white bg-yellow rounded-circle p-6 d-flex align-items-center justify-content-center">
+                  <i class="ti ti-brightness-up fs-6"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="light-chart"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="row alig n-items-start justify-content-between">
+            <div class="col-4">
+              <h5 class="card-title mb-9 fw-semibold">Wifi Connection</h5>
+              <h4 id="wifi" class="mb-3">Wifi name</h4>
+            </div>
+            <div class="col-2">
+              <div class="d-flex justify-content-end">
+                <div class="text-white bg-primary rounded-circle p-6 d-flex align-items-center justify-content-center">
+                  <i class="ti ti-wifi fs-6"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="row alig n-items-start justify-content-between">
+            <div class="col-4">
+              <h5 class="card-title mb-9 fw-semibold">Relay</h5>
+              <div class="form-check form-switch d-flex align-items-center">
+                <input class="form-check-input" type="checkbox" role="switch" id="relay-input" {% if relay %}checked{% endif %} />
+                <label for="relay-input" class="form-check-label ps-4"><h4 id="relay">ON</h4></label>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="d-flex justify-content-end">
+                <div class="text-white bg-primary rounded-circle p-6 d-flex align-items-center justify-content-center">
+                  <i class="ti ti-lamp-2 fs-6"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block extra_js %}
+  <script src="{% static 'js/dashboard.js' %}"></script>
+{% endblock %}
